@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.3)
+project(saebim)
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+if (CYGWIN)
+    SET(CMAKE_CXX_FLAGS "-L/usr/local/lib -lzmq")
+endif ()
+if (UNIX)
+    find_package(zmq)
+endif ()
+
+set(SOURCE_FILES main.cpp)
+add_executable(saebim ${SOURCE_FILES})
+TARGET_LINK_LIBRARIES(saebim zmq)
+
