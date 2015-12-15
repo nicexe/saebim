@@ -7,8 +7,8 @@ class fl_connection_panel_ui {open
   Function {fl_connection_panel_ui()} {open
   } {
     Fl_Window make_window {
-      label {Conection Panel} open selected
-      xywh {567 296 380 300} type Double size_range {380 300 380 300} visible
+      label {Conection Panel} open
+      xywh {50 50 380 300} type Double size_range {380 300 380 300} visible
     } {
       Fl_Group {} {
         label {Connection Details} open
@@ -38,7 +38,7 @@ class fl_connection_panel_ui {open
       }
       Fl_Output output_status {
         label Status
-        xywh {45 275 334 25} box PLASTIC_DOWN_BOX color 33
+        xywh {50 275 330 25} box PLASTIC_DOWN_BOX color 33
       }
     }
   }
