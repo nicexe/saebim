@@ -17,5 +17,5 @@ endif ()
 
 set(SOURCE_FILES main.cpp fl_connection_panel_ui.cxx fl_connection_panel_ui.h connection_panel_ui.cpp connection_panel_ui.h)
 add_executable(saebim ${SOURCE_FILES})
-TARGET_LINK_LIBRARIES(saebim zmq FLTK)
+TARGET_LINK_LIBRARIES(saebim zmq fltk)
 
