@@ -2,41 +2,44 @@
 version 1.0303 
 header_name {.h} 
 code_name {.cxx}
-Function {messaging_ui_make_window()} {open
+class connection_panel_ui {open
 } {
-  Fl_Window connection_panel_ui {
-    label {Conection Panel} open
-    xywh {394 249 368 269} type Double labeltype NORMAL_LABEL align 80 size_range {400 600 400 600} visible
+  Function {connection_panel_ui()} {open
   } {
-    Fl_Group {} {
-      label {Connection Details} open
-      xywh {10 26 348 78} box PLASTIC_UP_FRAME
+    Fl_Window make_window {
+      label {Conection Panel} open
+      xywh {551 280 380 300} type Double labeltype NORMAL_LABEL align 80 size_range {400 600 400 600} visible
     } {
-      Fl_Output output_hostname {
-        label Hostname selected
-        xywh {87 36 261 24} color 33
+      Fl_Group {} {
+        label {Connection Details} open
+        xywh {10 27 360 114} box PLASTIC_UP_FRAME
+      } {
+        Fl_Output output_hostname {
+          label Hostname
+          xywh {20 56 340 24} color 33 align 1
+        }
+        Fl_Spinner spinner_port {
+          label Port
+          xywh {20 106 340 24} align 1
+        }
       }
-      Fl_Spinner spinner_port {
-        label Port
-        xywh {50 70 298 24}
+      Fl_Group {} {
+        label Connect open
+        xywh {10 165 360 95} box PLASTIC_UP_FRAME
+      } {
+        Fl_Input input_hostname {
+          label Hostname
+          xywh {20 191 340 24} box PLASTIC_DOWN_BOX align 1
+        }
+        Fl_Button button_connect {
+          label Connect
+          xywh {20 225 340 25}
+        }
       }
-    }
-    Fl_Group {} {
-      label Connect open
-      xywh {10 130 348 95} box PLASTIC_UP_FRAME
-    } {
-      Fl_Input input_hostname {
-        label Hostname
-        xywh {20 156 325 24} box PLASTIC_DOWN_BOX align 1
+      Fl_Output output_status {
+        label Status
+        xywh {45 275 334 25} box PLASTIC_DOWN_BOX color 33
       }
-      Fl_Button button_connect {
-        label Connect
-        xywh {20 190 328 25}
-      }
-    }
-    Fl_Output output_status {
-      label Status
-      xywh {54 235 304 25} box PLASTIC_DOWN_BOX color 33
     }
   }
 } 
